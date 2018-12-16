@@ -6,13 +6,22 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "product_table")
 class Product(@ColumnInfo(name = "productname")
-              var productName: String = "",
+              var name: String = "",
 
               @ColumnInfo(name = "price")
               var price: Float = 0.0f,
 
               @ColumnInfo(name = "image")
-              var image: Int = 0,
+              var product_url: String = "",
+
+              @ColumnInfo(name = "imageUrl")
+              var local_url: ByteArray? = null,
+
+              @ColumnInfo(name = "isCart")
+              var isCart: Boolean = false,
+
+              @ColumnInfo(name = "isFavorite")
+              var isFavorite: Boolean = false,
 
               @PrimaryKey(autoGenerate = true)
               @ColumnInfo(name = "id")

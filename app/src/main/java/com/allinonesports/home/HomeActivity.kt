@@ -9,14 +9,16 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
 import com.allinonesports.EmptyFragment
-import com.allinonesports.R
+import com.allinonesports.cart.CartFragment
 import com.allinonesports.events.EventFragment
+import com.allinonesports.favorite.FavoriteFragment
 import com.allinonesports.headlines.HeadlinesFragment
+import com.allinonesports.news.NewsFragment
 import com.allinonesports.scan.ScanFragment
 import com.allinonesports.shop.ShopFragment
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.content_data.*
 import kotlinx.android.synthetic.main.app_bar_home.*
+import kotlinx.android.synthetic.main.content_data.*
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -61,13 +63,13 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener, NavigationView.O
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_news -> {
-                addFragment(EmptyFragment())
+                addFragment(NewsFragment())
             }
             R.id.nav_cart -> {
-                addFragment(EmptyFragment())
+                addFragment(CartFragment())
             }
             R.id.nav_favorite -> {
-                addFragment(EmptyFragment())
+                addFragment(FavoriteFragment())
             }
             R.id.nav_forum -> {
                 addFragment(EmptyFragment())

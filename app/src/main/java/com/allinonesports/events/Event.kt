@@ -6,14 +6,20 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "event_table")
 class Event(@ColumnInfo(name = "subtitle")
-            var subtitle: String = "",
+            var name: String? = "",
 
             @ColumnInfo(name = "info")
-            var info: String = "",
+            var description: String? = "",
 
             @ColumnInfo(name = "image")
-            var image: Int = 0,
+            var url: String? = "",
 
-            @PrimaryKey(autoGenerate = true)
+            @ColumnInfo(name = "category")
+            var category: String? = "",
+
+            @ColumnInfo(name = "country")
+            var country: String? = "",
+
+            @PrimaryKey
             @ColumnInfo(name = "id")
-            var id: Int = 0)
+            var id: String = "")

@@ -9,14 +9,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_small"
-        android:text="Shop"
-        android:textStyle="bold"
-        android:textSize="24sp" />
+        android:text="News"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/product_list"
+        android:id="@+id/news_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_medium"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent" />

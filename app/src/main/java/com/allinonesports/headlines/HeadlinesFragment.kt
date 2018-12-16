@@ -6,9 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.allinonesports.R
 import com.allinonesports.database.StoreDatabase
-import kotlinx.android.synthetic.main.fragment_headline.view.*
 
 class HeadlinesFragment : Fragment(), HeadlinesListener {
 
@@ -16,7 +14,7 @@ class HeadlinesFragment : Fragment(), HeadlinesListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_headline, container, false)
-        adapter = HeadlineAdapter(ArrayList<HeadlinesItem>())
+        adapter = HeadlineAdapter(context!!, ArrayList<HeadlinesItem>())
         view.headline_list.adapter = adapter
         return view
     }

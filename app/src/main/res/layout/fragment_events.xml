@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_small"
         android:text="Events"
+        android:textStyle="bold"
         android:textSize="24sp" />
 
     <android.support.v7.widget.RecyclerView

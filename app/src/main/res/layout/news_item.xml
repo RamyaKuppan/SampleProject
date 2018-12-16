@@ -27,16 +27,6 @@
                 android:layout_marginTop="8dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/read_later"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="end"
-                    android:text="Read Later"
-                    android:textColor="#0000FF"
-                    android:textSize="20sp" />
-
                 <ImageView
                     android:id="@+id/image"
                     android:layout_width="match_parent"
