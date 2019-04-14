@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.allinonesports.R
 import com.allinonesports.database.StoreDatabase
 import com.allinonesports.shop.Product
 import com.squareup.picasso.Picasso
@@ -51,7 +52,7 @@ class FavoriteAdapter(var context: Context, var favoriteItems: ArrayList<Favorit
                 view.product_image.setImageBitmap(getImage(favorite.local_url))
             }
 
-            view.button.setOnClickListener({
+            view.button.setOnClickListener {
                 doAsync {
                     val favoriteDao = StoreDatabase.getInstance(context.applicationContext).getFavoriteItems()
                     favoriteDao.delete(favorite)
@@ -62,7 +63,7 @@ class FavoriteAdapter(var context: Context, var favoriteItems: ArrayList<Favorit
                 }
                 Toast.makeText(context, "Product removed successfully from favorite", Toast.LENGTH_SHORT).show()
                 favoriteListener.reloadFavorite(position)
-            })
+            }
         }
 
         private fun getImage(image: ByteArray?): Bitmap {

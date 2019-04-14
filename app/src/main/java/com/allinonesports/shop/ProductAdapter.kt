@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.allinonesports.R
 import com.allinonesports.cart.Cart
 import com.allinonesports.database.StoreDatabase
 import com.allinonesports.favorite.Favorite
@@ -45,7 +46,7 @@ class ProductAdapter(var context: Context, var products: List<Product>) : Recycl
                 view.product_image.setImageBitmap(getImage(product.local_url))
             }
 
-            view.cart.setOnClickListener({
+            view.cart.setOnClickListener {
 
                 if (!product.isCart) {
                     doAsync {
@@ -61,9 +62,9 @@ class ProductAdapter(var context: Context, var products: List<Product>) : Recycl
                 } else {
                     Toast.makeText(context, "Product added already to cart", Toast.LENGTH_SHORT).show()
                 }
-            })
+            }
 
-            view.favorite.setOnClickListener({
+            view.favorite.setOnClickListener {
                 if (!product.isFavorite) {
                     doAsync {
                         val productDao = StoreDatabase.getInstance(context.applicationContext).getProducts()
@@ -77,15 +78,15 @@ class ProductAdapter(var context: Context, var products: List<Product>) : Recycl
                 } else {
                     Toast.makeText(context, "Product added already to favorite", Toast.LENGTH_SHORT).show()
                 }
-            })
+            }
 
-            view.share.setOnClickListener({
+            view.share.setOnClickListener {
                 val sharingIntent = Intent(Intent.ACTION_SEND)
                 sharingIntent.type = "text/plain"
                 val productName = "Product name ${product.name}"
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, productName)
                 context.startActivity(Intent.createChooser(sharingIntent, "Share using"))
-            })
+            }
         }
 
         private fun getImage(image: ByteArray?): Bitmap {

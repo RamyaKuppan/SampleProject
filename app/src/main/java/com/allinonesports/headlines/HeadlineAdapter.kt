@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.allinonesports.R
 import com.allinonesports.database.StoreDatabase
 import com.allinonesports.news.News
 import com.squareup.picasso.Picasso
@@ -43,7 +44,7 @@ class HeadlineAdapter(var context: Context, var headlines: List<HeadlinesItem>) 
             if (!headlinesItem.urlToImage.isNullOrEmpty())
                 Picasso.get().load(headlinesItem.urlToImage).into(view.image)
 
-            view.read_later.setOnClickListener({
+            view.read_later.setOnClickListener {
                 if (!headlinesItem.readLater) {
                     doAsync {
                         val productDao = StoreDatabase.getInstance(context.applicationContext).getHeadings()
@@ -57,7 +58,7 @@ class HeadlineAdapter(var context: Context, var headlines: List<HeadlinesItem>) 
                     }
                     Toast.makeText(context, "You can read this news later in News section", Toast.LENGTH_SHORT).show()
                 }
-            })
+            }
         }
     }
 }

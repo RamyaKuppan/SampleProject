@@ -7,7 +7,9 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.allinonesports.R
 import com.allinonesports.database.StoreDatabase
+import kotlinx.android.synthetic.main.fragment_cart.view.*
 
 class FavoriteFragment : Fragment(), FavoriteListener {
 

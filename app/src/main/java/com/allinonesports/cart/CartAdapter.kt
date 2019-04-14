@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.allinonesports.R
 import com.allinonesports.database.StoreDatabase
 import com.allinonesports.shop.Product
 import com.squareup.picasso.Picasso
@@ -51,7 +52,7 @@ class CartAdapter(var context: Context, var cartItems: ArrayList<Cart>) : Recycl
                 view.product_image.setImageBitmap(getImage(cart.local_url))
             }
 
-            view.button.setOnClickListener({
+            view.button.setOnClickListener {
                 doAsync {
                     val cartDao = StoreDatabase.getInstance(context.applicationContext).getCartItems()
                     cartDao.delete(cart)
@@ -62,7 +63,7 @@ class CartAdapter(var context: Context, var cartItems: ArrayList<Cart>) : Recycl
                 }
                 Toast.makeText(context, "Product removed successfully from cart", Toast.LENGTH_SHORT).show()
                 cartListener.reloadCart(position)
-            })
+            }
         }
 
         private fun getImage(image: ByteArray?): Bitmap {

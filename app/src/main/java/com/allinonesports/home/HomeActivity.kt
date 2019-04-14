@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
 import com.allinonesports.EmptyFragment
+import com.allinonesports.R
 import com.allinonesports.cart.CartFragment
 import com.allinonesports.events.EventFragment
 import com.allinonesports.favorite.FavoriteFragment

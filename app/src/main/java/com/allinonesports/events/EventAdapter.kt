@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.allinonesports.R
 import kotlinx.android.synthetic.main.event_list_item.view.*
 
 class EventAdapter(var events: List<Event>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
